@@ -1,0 +1,28 @@
+{
+  "name": "cordova-plugin-firebase-crashlytics",
+  "version": "0.0.1",
+  "cordova": {
+    "id": "cordova-plugin-firebase-crashlytics",
+    "platforms": [
+      "android",
+      "ios",
+      "browser"
+    ]
+  },
+  "description": "A Google Firebase Crashlytics plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ReallySmallSoftware/cordova-plugin-firebase-crashlytics.git"
+  },
+  "author": "Richard Windley <richard.windley@gmail.com> (http://www.reallysmall.co.uk)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ReallySmallSoftware/cordova-plugin-firebase-crashlytics/issues"
+  },
+  "homepage": "https://github.com/ReallySmallSoftware/cordova-plugin-firebase-crashlytics",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ]
+}

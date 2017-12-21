@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.1">
+  <name>Cordova Firebase Crashlytics Plugin</name>
+  <description>Google Firebase Crashlytics</description>
+  <license>MIT</license>
+  <keywords>cloud, crash, reporting</keywords>
+
+  <dependency id="cordova-plugin-firebase-hooks"/>
+
+  <platform name="browser">
+    <js-module src="www/browser/crashlytics.js" name="Crashlytics">
+      <clobbers target="Crashlytics"/>
+    </js-module>
+  </platform>
+
+  <platform name="android">
+    <js-module src="www/crashlytics.js" name="Crashlytics">
+      <clobbers target="Crashlytics"/>
+    </js-module>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Crashlytics">
+        <param name="android-package" value="uk.co.reallysmall.cordova.plugin.firebase.crashlytics.FirebaseCrashlyticsPlugin"/>
+        <param name="onload" value="true"/>
+      </feature>
+    </config-file>
+
+    <preference name="ANDROID_FIREBASE_VERSION" default="11.6.0"/>
+    <framework src="com.google.firebase:firebase-firestore:$ANDROID_FIREBASE_VERSION"/>
+    <framework src="org.json:json:20171018"/>
+    <framework src="firebase-crashlytics.gradle" custom="true" type="gradleReference"/>
+
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/FirebaseCrashlyticsPlugin.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/ActionHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/CrashHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogPriorityHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetStringHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetBoolHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetDoubleHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetFloatHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetIntHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+
+  </platform>
+
+  <platform name="ios">
+    <js-module src="www/crashlytics.js" name="Crashlytics">
+      <clobbers target="Crashlytics"/>
+    </js-module>
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="Crashlytics">
+        <param name="ios-package" value="FirebaseCrashlyticsPlugin" onload="true"/>
+      </feature>
+    </config-file>
+
+    <framework src="Fabric" type="podspec" spec="~> 1.7.2"/>
+    <framework src="Crashlytics" type="podspec" spec="~> 3.9.3"/>
+
+    <header-file src="src/ios/FirebaseCrashlyticsPlugin.h"/>
+    <source-file src="src/ios/FirebaseCrashlyticsPlugin.m"/>
+  </platform>
+
+</plugin>
