@@ -1,4 +1,5 @@
 #import <Cordova/CDVPlugin.h>
+@import Firebase;
 #import <Crashlytics/Crashlytics.h>
 
 @interface FirebaseCrashlyticsPlugin : CDVPlugin
