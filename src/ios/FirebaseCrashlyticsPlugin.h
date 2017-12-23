@@ -1,7 +1,7 @@
 #import <Cordova/CDVPlugin.h>
 #import <Crashlytics/Crashlytics.h>
 
-@interface FiresbaseCrashlyticsePlugin : CDVPlugin
+@interface FirebaseCrashlyticsPlugin : CDVPlugin
 
 - (void)crash:(CDVInvokedUrlCommand *)command;
 - (void)logPriority:(CDVInvokedUrlCommand *)command;
