@@ -1,7 +1,7 @@
 var exec = require('cordova/exec');
 var utils = require("cordova/utils");
 
-var PLUGIN_NAME = 'Crashlytics';
+var PLUGIN_NAME = 'FirebaseCrashlytics';
 
 function Crashlytics() {
 }
