@@ -4,6 +4,8 @@ package uk.co.reallysmall.cordova.plugin.firebase.crashlytics;
 
 import android.util.Log;
 
+import com.crashlytics.android.Crashlytics;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
@@ -13,6 +15,8 @@ import org.json.JSONException;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import io.fabric.sdk.android.Fabric;
 
 public class FirebaseCrashlyticsPlugin extends CordovaPlugin {
     static final String TAG = "FBCrashlyticsPlugin";
@@ -31,6 +35,8 @@ public class FirebaseCrashlyticsPlugin extends CordovaPlugin {
         handlers.put("setInt", new SetIntHandler());
 
         Log.d(TAG, "Initializing FBCrashlyticsPlugin");
+
+        Fabric.with(cordova.getActivity(), new Crashlytics());
     }
 
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
