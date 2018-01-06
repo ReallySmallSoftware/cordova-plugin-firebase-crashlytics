@@ -2,7 +2,7 @@
 @import Firebase;
 #import <Crashlytics/Crashlytics.h>
 
-@interface FirebaseCrashlyticsPlugin : CDVPlugin
+@interface FirebaseCrashlyticsPlugin : CDVPlugin <UIAlertViewDelegate>
 
 - (void)crash:(CDVInvokedUrlCommand *)command;
 - (void)logPriority:(CDVInvokedUrlCommand *)command;

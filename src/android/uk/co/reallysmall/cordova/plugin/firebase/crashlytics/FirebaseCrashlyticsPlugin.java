@@ -36,14 +36,20 @@ public class FirebaseCrashlyticsPlugin extends CordovaPlugin {
 
         Log.d(TAG, "Initializing FBCrashlyticsPlugin");
 
-        Fabric.with(cordova.getActivity(), new Crashlytics());
+        final Fabric fabric = new Fabric.Builder(cordova.getActivity())
+                .kits(new Crashlytics())
+                .debuggable(true)
+                .build();
+        Fabric.with(fabric);
+
+//        Fabric.with(cordova.getActivity(), new Crashlytics());
     }
 
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         Log.d(TAG, action);
 
         if (handlers.containsKey(action)) {
-            return handlers.get(action).handle(args);
+            return handlers.get(action).handle(args, this.cordova);
         }
 
         return false;

@@ -4,12 +4,13 @@ import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
 
+import org.apache.cordova.CordovaInterface;
 import org.json.JSONArray;
 import org.json.JSONException;
 
 public class SetIntHandler implements ActionHandler {
     @Override
-    public boolean handle(JSONArray args) {
+    public boolean handle(JSONArray args, CordovaInterface cordova) {
         try {
             final String key = args.getString(0);
             final Integer value = args.getInt(1);
