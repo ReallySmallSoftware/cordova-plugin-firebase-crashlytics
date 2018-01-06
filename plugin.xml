@@ -6,8 +6,6 @@
   <license>MIT</license>
   <keywords>cloud, crash, reporting</keywords>
 
-  <dependency id="cordova-plugin-firebase-hooks"/>
-
   <engines>
       <engine name="cordova" version=">=6.0.0"/>
       <engine name="cordova-android" version=">=4.0.0"/>

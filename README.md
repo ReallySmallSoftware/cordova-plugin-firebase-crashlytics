@@ -32,6 +32,26 @@ or
 
 Omitting FIREBASE_VERSION will use a default value.
 
+Firebase configuration
+--
+Android
+--
+You must ensure that `google-services.json` is put in the correct location. This can be achieved using the following in your `config.xml`:
+
+```
+<platform name="android">
+    <resource-file src="google-services.json" target="google-services.json" />
+</platform>
+```
+iOS
+--
+iOS requires `GoogleService-Info.plist` is put in the correct location. Similarly this can be done as follws:
+```
+<platform name="ios">
+    <resource-file src="GoogleService-Info.plist" />
+</platform>
+```
+
 How to use it
 --
 Simply add the plugin to get the default Crashlytics functionality.
