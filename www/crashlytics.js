@@ -16,6 +16,9 @@ Crashlytics.prototype = {
   log: function(message) {
     exec(function() {}, null, PLUGIN_NAME, 'log', [message]);
   },
+  logException: function(message) {
+    exec(function() {}, null, PLUGIN_NAME, 'logException', [message]);
+  },
   setString: function(key, value) {
     exec(function() {}, null, PLUGIN_NAME, 'setString', [key, value]);
   },

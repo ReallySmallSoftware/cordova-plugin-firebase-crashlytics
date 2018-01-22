@@ -13,6 +13,9 @@ Crashlytics.prototype = {
   log: function(message) {
     console.debug(message);
   },
+  logException: function(message) {
+    console.debug(message);
+  },
   setString: function(key, value) {
     console.debug(key + ":" + value);
   },
