@@ -15,11 +15,7 @@ Supported platforms
 This plugin supports the following platforms:
 
 - Android
-- iOS
-
-Status
---
-This is very much a work in progress.
+- iOS (untested)
 
 Installation
 --
@@ -54,7 +50,46 @@ iOS requires `GoogleService-Info.plist` is put in the correct location. Similarl
 
 How to use it
 --
-Simply add the plugin to get the default Crashlytics functionality.
+Simply add the plugin to get the default Crashlytics functionality. Note that crashes and logged exceptions will only be reported when the app restarts.
+
+Methods
+==
+
+crash()
+--
+Generate a forced crash.
+
+logPriority(priority, tag, message)
+--
+Log a priority message. Will only be logged in the event of a crash.
+
+log(message)
+--
+Log a message. Will only be logged in the event of a crash.
+
+logException(message)
+--
+Log when a handled exception has happened.
+
+setString(key, value)
+--
+Set extra key/value string value. Will only be logged in the event of a crash.
+
+setBool(key, value)
+--
+Set extra key/value bool value. Will only be logged in the event of a crash.
+
+setDouble(key, value)
+--
+Set extra key/value double value. Will only be logged in the event of a crash.
+
+setFloat(key, value)
+--
+Set extra key/value float value. Will only be logged in the event of a crash.
+
+setInt(key, value)
+--
+Set extra key/value integer value. Will only be logged in the event of a crash.
 
 History
 ==
