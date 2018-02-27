@@ -1,3 +1,4 @@
+/*global alert */
 var PLUGIN_NAME = 'Crashlytics';
 
 function Crashlytics() {

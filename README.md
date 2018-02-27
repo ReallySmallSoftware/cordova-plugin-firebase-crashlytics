@@ -93,6 +93,11 @@ Set extra key/value integer value. Will only be logged in the event of a crash.
 
 History
 ==
+0.0.2
+--
+- Add grunt to run jshint
+- Fix some grunt warnings
+
 0.0.1
 --
 - Initial release
