@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.4">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.5">
   <name>Cordova Firebase Crashlytics Plugin</name>
   <description>Google Firebase Crashlytics</description>
   <license>MIT</license>
   <keywords>cloud, crash, reporting</keywords>
 
   <engines>
-      <engine name="cordova" version=">=6.0.0"/>
-      <engine name="cordova-android" version=">=4.0.0"/>
-      <engine name="cordova-plugman" version=">=4.2.0"/>
-      <engine name="cordova-ios" version=">=4.5.4"/>
+      <engine name="cordova" version=">=6.0.0" />
+      <engine name="cordova-android" version=">=4.0.0" />
+      <engine name="cordova-plugman" version=">=4.2.0" />
+      <engine name="cordova-ios" version=">=4.5.4" />
   </engines>
+
+  <hook type="after_plugin_install" src="scripts/after_plugin_add.js" />
+  <hook type="after_platform_add" src="scripts/after_plugin_add.js" />
+  <hook type="before_plugin_uninstall" src="scripts/before_plugin_rm.js" />
 
   <platform name="browser">
     <js-module src="www/browser/crashlytics.js" name="FirebaseCrashlytics">
@@ -61,11 +65,13 @@
       </feature>
     </config-file>
 
-    <framework src="Fabric" type="podspec" spec="~> 1.7.2"/>
-    <framework src="Crashlytics" type="podspec" spec="~> 3.9.3"/>
+    <framework src="Fabric" type="podspec" spec="~> 1.7.5"/>
+    <framework src="Crashlytics" type="podspec" spec="~> 3.10.1"/>
 
     <header-file src="src/ios/FirebaseCrashlyticsPlugin.h"/>
     <source-file src="src/ios/FirebaseCrashlyticsPlugin.m"/>
+    <header-file src="src/ios/AppDelegate+FirebaseCrashlyticsPlugin.h"/>
+    <source-file src="src/ios/AppDelegate+FirebaseCrashlyticsPlugin.m"/>
   </platform>
 
 </plugin>

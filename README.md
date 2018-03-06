@@ -81,6 +81,12 @@ Set extra key/value float value. Will only be logged in the event of a crash.
 Set extra key/value integer value. Will only be logged in the event of a crash.
 
 # History
+## 0.0.5
+- Merge back in some iOS updates
+
+## 0.0.4
+- Updated gradle dependencies
+
 ## 0.0.3
 - Fix typo in README
 - Added embarrassing fix for logException()

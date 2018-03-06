@@ -5,9 +5,6 @@
 @implementation FirebaseCrashlyticsPlugin
 
 - (void)pluginInitialize {
-    if(![FIRApp defaultApp]) {
-        [FIRApp configure];
-    }
 }
 
 - (void)crash:(CDVInvokedUrlCommand *)command {
@@ -21,12 +18,12 @@
 
 - (void)logException:(CDVInvokedUrlCommand *)command {
     NSString *message = [command argumentAtIndex:0];
-    
+
     NSDictionary *userInfo = @{
                                NSLocalizedDescriptionKey: NSLocalizedString(@"Unexpected excerption", nil),
                                NSLocalizedFailureReasonErrorKey: NSLocalizedString(message, nil),
                                NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString(@"", nil)};
-    
+
     NSError *error = [NSError errorWithDomain:@"uk.co.trssc" code:-1 userInfo:userInfo];
     [CrashlyticsKit recordError:error];
     [[Crashlytics sharedInstance] recordCustomExceptionName:@"HandledException" reason:message frameArray:@[]];
