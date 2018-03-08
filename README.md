@@ -83,6 +83,7 @@ Set extra key/value integer value. Will only be logged in the event of a crash.
 # History
 ## 0.0.5
 - Merge back in some iOS updates
+- Add xcode npm dependency
 
 ## 0.0.4
 - Updated gradle dependencies
