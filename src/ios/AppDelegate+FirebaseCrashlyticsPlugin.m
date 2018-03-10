@@ -19,7 +19,7 @@
 
 -(BOOL)firebaseCrashlyticsPlugin:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
     //[[Fabric sharedSDK] setDebug: YES];
-    [Fabric with:@[[Crashlytics class]]];
+  //  [Fabric with:@[[Crashlytics class]]];
 
     return [self firebaseCrashlyticsPlugin:application didFinishLaunchingWithOptions:launchOptions];
 }
