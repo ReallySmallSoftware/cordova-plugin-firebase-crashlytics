@@ -49,6 +49,12 @@ iOS requires `GoogleService-Info.plist` is put in the correct location. Similarl
 </platform>
 ```
 
+#### Podfile configuration
+At this time it is necessary to manually add the `use_frameworks!` directive to this file.
+
+#### Keychain Sharing Capability
+If using multiple Firebase plugins it may be necessary to enable this.
+
 # How to use it
 Simply add the plugin to get the default Crashlytics functionality. Note that crashes and logged exceptions will only be reported when the application restarts.
 
@@ -82,7 +88,7 @@ Set extra key/value integer value. Will only be logged in the event of a crash.
 
 # History
 ## 0.0.5
-- Merge back in some iOS updates
+- Merge back in some iOS updates (https://github.com/kanodeveloper/cordova-plugin-firebase-crashlytics-ka)
 - Add xcode npm dependency
 
 ## 0.0.4
