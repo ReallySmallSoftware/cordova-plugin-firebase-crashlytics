@@ -52,21 +52,27 @@
     NSString *key = [command argumentAtIndex:0];
     NSNumber *value = [command argumentAtIndex:1];
 
-    [CrashlyticsKit setIntValue:[value boolValue] forKey:key];
+    [CrashlyticsKit setBoolValue:[value boolValue] forKey:key];
 }
 
 - (void)setDouble:(CDVInvokedUrlCommand *)command {
     NSString *key = [command argumentAtIndex:0];
     NSNumber *value = [command argumentAtIndex:1];
 
-    [CrashlyticsKit setIntValue:[value doubleValue] forKey:key];
+    [CrashlyticsKit setFloatValue:[value doubleValue] forKey:key];
 }
 
 - (void)setFloat:(CDVInvokedUrlCommand *)command {
     NSString *key = [command argumentAtIndex:0];
     NSNumber *value = [command argumentAtIndex:1];
 
-    [CrashlyticsKit setIntValue:[value floatValue] forKey:key];
+    [CrashlyticsKit setFloatValue:[value floatValue] forKey:key];
+}
+
+- (void)setUserIdentifier:(CDVInvokedUrlCommand *)command {
+    NSString *identifier = [command argumentAtIndex:0];
+    
+    [CrashlyticsKit setUserIdentifier:identifier];
 }
 
 @end
