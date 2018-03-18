@@ -97,6 +97,10 @@ Set extra key/value integer value. Will only be logged in the event of a crash.
 Set the identifier for the user. Take care when using this method and ensure you privacy policy is updated accordingly.
 
 # History
+## 0.0.6
+- Add SetUserIdentifier()
+- Fix iOS set() methods with wrong types
+
 ## 0.0.5
 - Merge back in some iOS updates (https://github.com/kanodeveloper/cordova-plugin-firebase-crashlytics-ka)
 - Add xcode npm dependency
