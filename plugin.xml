@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.5">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.6">
   <name>Cordova Firebase Crashlytics Plugin</name>
   <description>Google Firebase Crashlytics</description>
   <license>MIT</license>
@@ -51,6 +51,7 @@
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetDoubleHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetFloatHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetIntHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetUserIdentifierHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
 
   </platform>
 

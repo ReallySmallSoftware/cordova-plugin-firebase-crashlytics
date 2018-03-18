@@ -34,6 +34,7 @@ public class FirebaseCrashlyticsPlugin extends CordovaPlugin {
         handlers.put("setFloat", new SetFloatHandler());
         handlers.put("setInt", new SetIntHandler());
         handlers.put("logException", new LogExceptionHandler());
+        handlers.put("setUserIdentifier", new SetUserIdentifierHandler());
 
         Log.d(TAG, "Initializing FBCrashlyticsPlugin");
 

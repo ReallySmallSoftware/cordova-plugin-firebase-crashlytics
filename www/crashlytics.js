@@ -33,6 +33,9 @@ Crashlytics.prototype = {
   },
   setInt: function(key, value) {
     exec(function() {}, null, PLUGIN_NAME, 'setInt', [key, value]);
+  },
+  setUserIdentifier: function(identifier) {
+    exec(function() {}, null, PLUGIN_NAME, 'setUserIdentifier', [identifier]);
   }
 };
 

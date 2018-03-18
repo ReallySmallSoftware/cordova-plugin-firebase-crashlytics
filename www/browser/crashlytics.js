@@ -31,6 +31,9 @@ Crashlytics.prototype = {
   },
   setInt: function(key, value) {
     console.debug(key + ":" + value);
+  },
+  setUserIdentifier: function(identifier) {
+    console.debug(identifier);
   }
 };
 

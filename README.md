@@ -58,6 +58,13 @@ If using multiple Firebase plugins it may be necessary to enable this.
 # How to use it
 Simply add the plugin to get the default Crashlytics functionality. Note that crashes and logged exceptions will only be reported when the application restarts.
 
+In order to log caught exceptions the following can be used:
+
+```
+var crashlytics = FirebaseCrashlytics.initialise();
+crashlytics.logException("my caught exception");
+```
+
 ## Methods
 ### crash()
 Generate a forced crash. Visible in console after restart of application.
@@ -85,6 +92,9 @@ Set extra key/value float value. Will only be logged in the event of a crash.
 
 ### setInt(key, value)
 Set extra key/value integer value. Will only be logged in the event of a crash.
+
+### setUserIdentifier(identifier)
+Set the identifier for the user. Take care when using this method and ensure you privacy policy is updated accordingly.
 
 # History
 ## 0.0.5
