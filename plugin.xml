@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.6">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.7">
   <name>Cordova Firebase Crashlytics Plugin</name>
   <description>Google Firebase Crashlytics</description>
   <license>MIT</license>
@@ -35,7 +35,7 @@
       </feature>
     </config-file>
 
-    <preference name="ANDROID_FIREBASE_VERSION" default="11.8.0"/>
+    <preference name="ANDROID_FIREBASE_VERSION" default="15.0.2"/>
     <framework src="com.google.firebase:firebase-core:$ANDROID_FIREBASE_VERSION"/>
     <framework src="org.json:json:20171018"/>
     <framework src="firebase-crashlytics.gradle" custom="true" type="gradleReference"/>
@@ -66,8 +66,9 @@
       </feature>
     </config-file>
 
-    <framework src="Fabric" type="podspec" spec="~> 1.7.5"/>
+    <framework src="Fabric" type="podspec" spec="~> 1.7.6"/>
     <framework src="Crashlytics" type="podspec" spec="~> 3.10.1"/>
+    <framework src="Firebase/Core" type="podspec" spec="~> 5.0.1"/>
 
     <header-file src="src/ios/FirebaseCrashlyticsPlugin.h"/>
     <source-file src="src/ios/FirebaseCrashlyticsPlugin.m"/>

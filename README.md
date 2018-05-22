@@ -97,6 +97,11 @@ Set extra key/value integer value. Will only be logged in the event of a crash.
 Set the identifier for the user. Take care when using this method and ensure you privacy policy is updated accordingly.
 
 # History
+## 0.0.7
+- Update Android dependency versions
+- Update iOS dependency versions
+- WARNING: The Android update may require you to update com.google.gms:google-services to 3.2.1, com.android.tools.build:gradle to 3.1.2 and gradle to 4.4.4 (look in platforms/android/cordova/lib/builders/GradleBuilder.js)
+
 ## 0.0.6
 - Add SetUserIdentifier()
 - Fix iOS set() methods with wrong types
