@@ -35,8 +35,8 @@
       </feature>
     </config-file>
 
-    <preference name="ANDROID_FIREBASE_VERSION" default="15.0.2"/>
-    <framework src="com.google.firebase:firebase-core:$ANDROID_FIREBASE_VERSION"/>
+    <preference name="ANDROID_FIREBASE_CORE_VERSION" default="16.0.0"/>
+    <framework src="com.google.firebase:firebase-core:$ANDROID_FIREBASE_CORE_VERSION"/>
     <framework src="org.json:json:20171018"/>
     <framework src="firebase-crashlytics.gradle" custom="true" type="gradleReference"/>
 

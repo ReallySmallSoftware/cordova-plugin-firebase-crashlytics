@@ -17,11 +17,11 @@ This plugin supports the following platforms:
 
 # Installation
 
-`cordova plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_VERSION=11.6.0 --save`
+`cordova plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_CORE_VERSION=16.0.0 --save`
 
 or
 
-`phonegap plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_VERSION=11.6.0`
+`phonegap plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_CORE_VERSION=16.0.0`
 
 Omitting `FIREBASE_VERSION` will use a default value.
 
@@ -100,7 +100,7 @@ Set the identifier for the user. Take care when using this method and ensure you
 ## 0.0.7
 - Update Android dependency versions
 - Update iOS dependency versions
-- WARNING: The Android update may require you to update com.google.gms:google-services to 3.2.1, com.android.tools.build:gradle to 3.1.2 and gradle to 4.4.4 (look in platforms/android/cordova/lib/builders/GradleBuilder.js)
+- WARNING: The Android update may require you to update com.google.gms:google-services to 4.0.0, com.android.tools.build:gradle to 3.1.2 and gradle to 4.4.4 (look in platforms/android/cordova/lib/builders/GradleBuilder.js)
 
 ## 0.0.6
 - Add SetUserIdentifier()
