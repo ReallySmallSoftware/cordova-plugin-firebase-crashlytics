@@ -9,6 +9,15 @@
       "browser"
     ]
   },
+  "engines": {
+    "cordovaDependencies": {
+      "0.0.7": {
+        "cordova": ">=7.0.0",
+        "cordova-android": ">=5.0.0",
+        "cordova-ios": ">=4.0.0"
+      }
+    }
+  },
   "description": "A Google Firebase Crashlytics plugin",
   "repository": {
     "type": "git",
@@ -23,7 +32,8 @@
   "keywords": [
     "ecosystem:cordova",
     "cordova-android",
-    "cordova-ios"
+    "cordova-ios",
+    "cordova-browser"
   ],
   "dependencies": {
     "xcode": "^1.0.0"

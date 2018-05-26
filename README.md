@@ -100,6 +100,7 @@ Set the identifier for the user. Take care when using this method and ensure you
 ## 0.0.7
 - Update Android dependency versions
 - Update iOS dependency versions
+- Update plugin dependencies
 - WARNING: The Android update may require you to update com.google.gms:google-services to 4.0.0, com.android.tools.build:gradle to 3.1.2 and gradle to 4.4.4 (look in platforms/android/cordova/lib/builders/GradleBuilder.js)
 
 ## 0.0.6
