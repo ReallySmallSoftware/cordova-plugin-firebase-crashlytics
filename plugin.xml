@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.7">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.8">
   <name>Cordova Firebase Crashlytics Plugin</name>
   <description>Google Firebase Crashlytics</description>
   <license>MIT</license>
@@ -68,7 +68,7 @@
 
     <framework src="Fabric" type="podspec" spec="~> 1.7.6"/>
     <framework src="Crashlytics" type="podspec" spec="~> 3.10.1"/>
-    <framework src="Firebase/Core" type="podspec" spec="~> 5.0.1"/>
+    <framework src="Firebase/Core" type="podspec" spec=""/>
 
     <header-file src="src/ios/FirebaseCrashlyticsPlugin.h"/>
     <source-file src="src/ios/FirebaseCrashlyticsPlugin.m"/>
