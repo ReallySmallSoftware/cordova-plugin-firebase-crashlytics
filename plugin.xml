@@ -68,7 +68,7 @@
 
     <framework src="Fabric" type="podspec" spec="~> 1.7.6"/>
     <framework src="Crashlytics" type="podspec" spec="~> 3.10.1"/>
-    <framework src="Firebase/Core" type="podspec" spec=""/>
+    <framework src="Firebase/Core" type="podspec"/>
 
     <header-file src="src/ios/FirebaseCrashlyticsPlugin.h"/>
     <source-file src="src/ios/FirebaseCrashlyticsPlugin.m"/>
