@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.8">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="0.0.9">
   <name>Cordova Firebase Crashlytics Plugin</name>
   <description>Google Firebase Crashlytics</description>
   <license>MIT</license>
@@ -8,9 +8,9 @@
 
   <engines>
       <engine name="cordova" version=">=7.0.0" />
-      <engine name="cordova-android" version=">=5.0.0" />
+      <engine name="cordova-android" version=">=8.0.0" />
       <engine name="cordova-plugman" version=">=4.2.0" />
-      <engine name="cordova-ios" version=">=4.0.0" />
+      <engine name="cordova-ios" version=">=5.0.0" />
   </engines>
 
   <hook type="after_plugin_install" src="scripts/after_plugin_add.js" />
@@ -35,7 +35,7 @@
       </feature>
     </config-file>
 
-    <preference name="ANDROID_FIREBASE_CORE_VERSION" default="16.0.0"/>
+    <preference name="ANDROID_FIREBASE_CORE_VERSION" default="16.0.8"/>
     <framework src="com.google.firebase:firebase-core:$ANDROID_FIREBASE_CORE_VERSION"/>
     <framework src="org.json:json:20171018"/>
     <framework src="firebase-crashlytics.gradle" custom="true" type="gradleReference"/>
@@ -66,9 +66,16 @@
       </feature>
     </config-file>
 
-    <framework src="Fabric" type="podspec" spec="~> 1.7.6"/>
-    <framework src="Crashlytics" type="podspec" spec="~> 3.10.1"/>
-    <framework src="Firebase/Core" type="podspec" spec=""/>
+    <podspec>
+      <config>
+        <source url="https://github.com/CocoaPods/Specs.git"/>
+      </config>
+      <pods use-frameworks="true">
+        <pod name="Fabric"/>
+        <pod name="Crashlytics" />
+        <pod name="FirebaseCore" />
+      </pods>
+    </podspec>
 
     <header-file src="src/ios/FirebaseCrashlyticsPlugin.h"/>
     <source-file src="src/ios/FirebaseCrashlyticsPlugin.m"/>

@@ -97,6 +97,11 @@ Set extra key/value integer value. Will only be logged in the event of a crash.
 Set the identifier for the user. Take care when using this method and ensure you privacy policy is updated accordingly.
 
 # History
+## 0.0.9
+- Update Android Firebase dependency
+- Fix podspec for cordova-ios 5
+- Fix xcode issue
+
 ## 0.0.8
 - Remove podspec version for firebase
 
