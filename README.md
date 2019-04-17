@@ -72,6 +72,18 @@ Generate a forced crash. Visible in console after restart of application.
 ### logPriority(priority, tag, message)
 Log a priority message. Will only be logged in the event of a crash.
 
+Available priorities are compatible with most Android [Log constants](https://developer.android.com/reference/android/util/Log#constants_2):
+- FirebaseCrashlytics.LOG.VERBOSE
+- FirebaseCrashlytics.LOG.DEBUG
+- FirebaseCrashlytics.LOG.INFO
+- FirebaseCrashlytics.LOG.WARN
+- FirebaseCrashlytics.LOG.ERROR
+
+Example usage
+```js
+crashlytics.logPriority(FirebaseCrashlytics.LOG.WARN, 'dashboard', 'This should not happened')
+```
+
 ### log(message)
 Log a message. Will only be logged in the event of a crash.
 
