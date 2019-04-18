@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-firebase-crashlytics",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "cordova": {
     "id": "cordova-plugin-firebase-crashlytics",
     "platforms": [
@@ -13,8 +13,8 @@
     "cordovaDependencies": {
       "0.0.7": {
         "cordova": ">=7.0.0",
-        "cordova-android": ">=5.0.0",
-        "cordova-ios": ">=4.0.0"
+        "cordova-android": ">=8.0.0",
+        "cordova-ios": ">=5.0.0"
       }
     }
   },
