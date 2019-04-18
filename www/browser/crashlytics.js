@@ -37,8 +37,18 @@ Crashlytics.prototype = {
   }
 };
 
-module.exports = {
-  initialise: function() {
-    return new Crashlytics();
-  }
+// Log levels
+Crashlytics.LOG = {
+  VERBOSE: 2,
+  DEBUG: 3,
+  INFO: 4,
+  WARN: 5,
+  ERROR: 6
+}
+
+// Backward compatibility instantiation
+Crashlytics.initialise = function() {
+  return new Crashlytics();
 };
+
+module.exports = Crashlytics;
