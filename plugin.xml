@@ -71,9 +71,9 @@
         <source url="https://github.com/CocoaPods/Specs.git"/>
       </config>
       <pods use-frameworks="true">
-        <pod name="Fabric"/>
-        <pod name="Crashlytics" />
-        <pod name="FirebaseCore" />
+        <pod name="Fabric" specs="~> 1.10.2"/>
+        <pod name="Crashlytics" specs="~> 3.14.0" />
+        <pod name="Firebase/Analytics" />
       </pods>
     </podspec>
 
