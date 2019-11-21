@@ -75,8 +75,6 @@
         <pod name="Crashlytics" />
         <pod name="FirebaseCore" />
         <pod name="Firebase/Analytics" />
-        <pod name="Firebase/Auth" />
-        <pod name="Firebase/Firestore" />
       </pods>
     </podspec>
 
