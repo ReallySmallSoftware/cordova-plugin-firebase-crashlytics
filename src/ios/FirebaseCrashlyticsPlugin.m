@@ -2,9 +2,12 @@
 
 #import <Cordova/CDVAvailability.h>
 
+#import <Firebase/Firebase.h>
+
 @implementation FirebaseCrashlyticsPlugin
 
 - (void)pluginInitialize {
+    [FIRApp configure];
 }
 
 - (void)crash:(CDVInvokedUrlCommand *)command {
