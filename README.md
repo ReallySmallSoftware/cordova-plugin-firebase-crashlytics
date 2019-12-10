@@ -108,7 +108,9 @@ Set extra key/value integer value. Will only be logged in the event of a crash.
 ### setUserIdentifier(identifier)
 Set the identifier for the user. Take care when using this method and ensure you privacy policy is updated accordingly.
 
-# History
+## 0.2.0
+- Add types
+
 ## 0.1.0
 - Dependency updates
 - Addition of log priority constants
