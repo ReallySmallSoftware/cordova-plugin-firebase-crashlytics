@@ -110,6 +110,7 @@ Set the identifier for the user. Take care when using this method and ensure you
 
 ## 0.2.0
 - Add types
+- Update dependencies
 
 ## 0.1.0
 - Dependency updates

@@ -1,4 +1,4 @@
-declare namespace FirebaseCrashlytics {
+declare namespace Firebase {
 
     export function initialise(): FirebaseCrashlytics;
 
