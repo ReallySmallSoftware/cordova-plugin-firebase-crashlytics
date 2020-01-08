@@ -108,9 +108,29 @@ Set extra key/value integer value. Will only be logged in the event of a crash.
 ### setUserIdentifier(identifier)
 Set the identifier for the user. Take care when using this method and ensure you privacy policy is updated accordingly.
 
-## 0.2.0
-- Add types
-- Update dependencies
+## Typescript
+Support is now included for typescript. Use the following to reference the typescript definitions:
+
+```
+/// <reference types="cordova-plugin-firebase-crashlytics" />
+
+private static crashlytics: FirebaseCrashlytics.FirebaseCrashlytics = FirebaseCrashlytics.initialise();
+crashlytics.logException("my message");
+```
+
+You may also need to add an external to webpack.config.ls:
+
+```
+  externals: {
+    'cordova-plugin-firebase-crashlytics': "cordova-plugin-firebase-crashlytics"
+    '/exec':"cordova/exec"
+  },
+```
+
+## 1.0.0
+- Added types
+- Updated dependencies for iOS
+- Updated dependencies for Android
 
 ## 0.1.0
 - Dependency updates

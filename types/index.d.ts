@@ -1,5 +1,4 @@
 declare namespace FirebaseCrashlytics {
-
     export function initialise(): FirebaseCrashlytics;
 
     export interface FirebaseCrashlytics {
@@ -16,3 +15,4 @@ declare namespace FirebaseCrashlytics {
         setUserIdentifier(identifier: string): void;
     }
 }
+
