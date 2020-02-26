@@ -35,7 +35,10 @@ Crashlytics.prototype = {
   },
   setUserIdentifier: function(identifier) {
     exec(null, null, PLUGIN_NAME, 'setUserIdentifier', [identifier]);
-  }
+  },
+  logError: function(message, stackTrace) {
+      exec(null, null, PLUGIN_NAME, 'logError', [message, stackTrace]);
+  },
 };
 
 // Log levels

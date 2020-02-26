@@ -13,6 +13,14 @@ declare namespace FirebaseCrashlytics {
         setFloat(key: string, value: number): void;
         setInt(key: string, value: number): void;
         setUserIdentifier(identifier: string): void;
+        logError(message: string, stackTrace: StackTraceLine[]): void;
+    }
+
+    export interface StackTraceLine {
+        className: string;
+        functionName: string;
+        fileName: string;
+        lineNumber: number;
     }
 }
 
