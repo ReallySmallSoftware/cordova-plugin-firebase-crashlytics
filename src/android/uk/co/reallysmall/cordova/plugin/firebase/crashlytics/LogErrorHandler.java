@@ -15,14 +15,14 @@ public class LogErrorHandler implements ActionHandler {
         cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                CustomException exception = null;
+                JavascriptException exception = null;
 
                 try {
                     final String msg = args.getString(0);
                     final JSONArray stl = args.getJSONArray(1);
                     final StackTraceLine[] stackTraceLines = getStackTraceLines(stl);
 
-                    exception = new CustomException(msg, stackTraceLines);
+                    exception = new JavascriptException(msg, stackTraceLines);
                 }
                 catch(JSONException e) {
                     Log.e(FirebaseCrashlyticsPlugin.TAG, "Unable to convert args to Exception object", e);
@@ -49,8 +49,8 @@ public class LogErrorHandler implements ActionHandler {
         return stackTraceLines;
     }
 
-    private static class CustomException extends Exception {
-        public CustomException(String message, StackTraceLine[] stackTraceLines) {
+    private static class JavascriptException extends Exception {
+        public JavascriptException(String message, StackTraceLine[] stackTraceLines) {
             super(message);
             StackTraceElement[] stackTrace = new StackTraceElement[stackTraceLines.length];
             for(int i = 0; i < stackTraceLines.length; i++) {
