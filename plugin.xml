@@ -44,7 +44,8 @@
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/CrashHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogPriorityHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
-    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogExceptionHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogErrorHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+	<source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogExceptionHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetStringHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetBoolHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetDoubleHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
