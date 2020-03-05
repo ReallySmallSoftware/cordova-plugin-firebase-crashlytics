@@ -21,7 +21,7 @@ Crashlytics.prototype = {
     exec(null, null, PLUGIN_NAME, 'logException', [message]);
   },
   logError: function(error, stackFrames) {
-	stackFrames = stackFrames || parseStack(error);	
+    stackFrames = stackFrames || parseStack(error);	
     exec(null, null, PLUGIN_NAME, 'logError', [error.toString(), stackFrames]);
   },
   setString: function(key, value) {
@@ -46,32 +46,32 @@ Crashlytics.prototype = {
 
 // Parse Error.stack
 function parseStack(error) {
-	if(!error || !error.stack) {
-		return [];
-	}
+  if(!error || !error.stack) {
+    return [];
+  }
+
+  var stackLines = error.stack.split('\n');
+  var stackFrames = [];
+  for(var i=0; i<stackLines.length; i++) {
+    if(!stackLines[i]) {
+      continue;
+    }
+    var parseResult = stackLines[i].match(PARSE_STACK_GENERIC);
+    if(!parseResult) {
+      parseResult = stackLines[i].match(PARSE_STACK_FALLBACK);
+    }
+    if(!parseResult) {
+      continue;
+    }
 	
-	var stackLines = error.stack.split('\n');
-	var stackFrames = [];
-	for(var i=0; i<stackLines.length; i++) {
-		if(!stackLines[i]) {
-			continue;
-		}
-		var parseResult = stackLines[i].match(PARSE_STACK_GENERIC);
-		if(!parseResult) {
-			parseResult = stackLines[i].match(PARSE_STACK_FALLBACK);
-		}
-		if(!parseResult) {
-			continue;
-		}
-		
-		stackFrames.push({
-			functionName: parseResult[2],
-			fileName: parseResult[3],
-			lineNumber: parseResult[4],
-			columnNumber: parseResult[5]
-		});
-	}
-	return stackFrames;
+    stackFrames.push({
+      functionName: parseResult[2],
+      fileName: parseResult[3],
+      lineNumber: parseResult[4],
+      columnNumber: parseResult[5]
+    });
+  }
+  return stackFrames;
 }
 
 // Log levels

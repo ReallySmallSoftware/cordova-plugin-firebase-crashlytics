@@ -13,7 +13,7 @@ declare namespace FirebaseCrashlytics {
         crash(): void;
         logPriority(priority: string, tag: string, message: string): void;
         log(message: string): void;
-		logError(error: Error, stackFrames?: Array<StackTraceLine>): void;
+        logError(error: Error, stackFrames?: Array<StackTraceLine>): void;
         logException(message: string): void;
         setString(key: string, value: string): void;
         setBool(key: string, value: boolean): void;
