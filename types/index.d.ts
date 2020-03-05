@@ -1,7 +1,7 @@
 declare namespace FirebaseCrashlytics {
     export function initialise(): FirebaseCrashlytics;
-		
-	export interface StackTraceLine {
+
+    export interface StackTraceLine {
         columnNumber: number;
         lineNumber: number;
         fileName: string;
