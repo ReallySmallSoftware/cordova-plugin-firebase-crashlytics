@@ -17,11 +17,11 @@ This plugin supports the following platforms:
 
 # Installation
 
-`cordova plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_CORE_VERSION=16.0.0 --save`
+`cordova plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_ANALYTICS_VERSION=16.0.0 --save`
 
 or
 
-`phonegap plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_CORE_VERSION=16.0.0`
+`phonegap plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_ANALYTICS_VERSION=16.0.0`
 
 Omitting `FIREBASE_VERSION` will use a default value.
 
