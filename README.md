@@ -17,11 +17,11 @@ This plugin supports the following platforms:
 
 # Installation
 
-`cordova plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_CORE_VERSION=16.0.0 --save`
+`cordova plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_ANALYTICS_VERSION=16.0.0 --save`
 
 or
 
-`phonegap plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_CORE_VERSION=16.0.0`
+`phonegap plugin add cordova-plugin-firebase-crashlytics --variable ANDROID_FIREBASE_ANALYTICS_VERSION=16.0.0`
 
 Omitting `FIREBASE_VERSION` will use a default value.
 
@@ -62,6 +62,11 @@ In order to log caught exceptions the following can be used:
 
 ```
 var crashlytics = FirebaseCrashlytics.initialise();
+crashlytics.logError(new Error("my caught exception"));
+```
+or
+```
+var crashlytics = FirebaseCrashlytics.initialise();
 crashlytics.logException("my caught exception");
 ```
 
@@ -86,6 +91,9 @@ crashlytics.logPriority(FirebaseCrashlytics.LOG.WARN, 'dashboard', 'This should 
 
 ### log(message)
 Log a message. Will only be logged in the event of a crash.
+
+### logError(message [, stackFrames])
+Log a catched exception. Optional stackFrames to be used with external stacktrace parser. Visible in console after restart of application.
 
 ### logException(message)
 Log when a handled exception has happened. Visible in console after restart of application.
@@ -126,6 +134,9 @@ You may also need to add an external to webpack.config.ls:
     '/exec':"cordova/exec"
   },
 ```
+
+## 1.0.1
+- Log aktual JS stacktrace
 
 ## 1.0.0
 - Added types

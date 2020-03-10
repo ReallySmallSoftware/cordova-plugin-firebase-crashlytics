@@ -21,6 +21,30 @@
     CLSLog(@"%@", message);
 }
 
+- (void)logError:(CDVInvokedUrlCommand *)command {
+    NSString *message = [command argumentAtIndex:0];
+    NSArray *stackLines = [command argumentAtIndex:1];
+
+    NSMutableArray *stackFrames = [NSMutableArray arrayWithCapacity: [stackLines count]];
+    @try {
+        for (NSDictionary *line in stackLines) {
+            if(line == nil) {
+                continue;
+            }
+            
+            CLSStackFrame *sf = [CLSStackFrame stackFrame];
+            [sf setSymbol: [line valueForKey:@"functionName"]];
+            [sf setFileName: [line valueForKey:@"fileName"]];
+            [sf setLineNumber: [line[@"lineNumber"] unsignedIntValue]];
+            
+            [stackFrames addObject:sf];
+        }
+    } @catch(NSException *exception) {
+    }
+
+    [[Crashlytics sharedInstance] recordCustomExceptionName:@"HandledException" reason:message frameArray:stackFrames];
+}
+
 - (void)logException:(CDVInvokedUrlCommand *)command {
     NSString *message = [command argumentAtIndex:0];
 

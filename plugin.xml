@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="1.0.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-firebase-crashlytics" version="1.0.1">
   <name>Cordova Firebase Crashlytics Plugin</name>
   <description>Google Firebase Crashlytics</description>
   <license>MIT</license>
@@ -44,6 +44,7 @@
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/CrashHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogPriorityHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogErrorHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogExceptionHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetStringHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetBoolHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
@@ -67,7 +68,7 @@
 
     <podspec>
       <config>
-        <source url="https://github.com/CocoaPods/Specs.git"/>
+        <source url="https://cdn.cocoapods.org/"/>
       </config>
       <pods use-frameworks="true">
         <pod name="Fabric" specs="~> 1.10.2"/>

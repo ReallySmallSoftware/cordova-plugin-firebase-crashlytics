@@ -5,6 +5,7 @@
 
 - (void)crash:(CDVInvokedUrlCommand *)command;
 - (void)logPriority:(CDVInvokedUrlCommand *)command;
+- (void)logError:(CDVInvokedUrlCommand *)command;
 - (void)logException:(CDVInvokedUrlCommand *)command;
 - (void)log:(CDVInvokedUrlCommand *)command;
 - (void)setString:(CDVInvokedUrlCommand *)command;
