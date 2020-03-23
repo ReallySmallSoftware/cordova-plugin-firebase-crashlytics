@@ -28,28 +28,41 @@
     NSMutableArray *stackFrames = [NSMutableArray arrayWithCapacity: [stackLines count]];
     @try {
         for (NSDictionary *line in stackLines) {
-            if(line == nil) {
+            if (line == nil) {
                 continue;
             }
             
             CLSStackFrame *sf = [CLSStackFrame stackFrame];
-            [sf setSymbol: [line valueForKey:@"functionName"]];
-            [sf setFileName: [line valueForKey:@"fileName"]];
-            [sf setLineNumber: [line[@"lineNumber"] unsignedIntValue]];
+
+            NSString *symbol = [line valueForKey:@"functionName"];
+            NSString *filename = [line valueForKey:@"fileName"];
+
+            if ([symbol isEqual:[NSNull null]]) {
+                symbol = @"unknown";
+            }
+
+            if ([fileName isEqual:[NSNull null]]) {
+                filename = @"unknown";
+            }
+
+            [sf setSymbol: symbol];
+            [sf setFileName: filename];
+            [sf setLineNumber: line[@"lineNumber"] unsignedIntValue]];
             
             [stackFrames addObject:sf];
         }
-    } @catch(NSException *exception) {
-    }
 
-    [[Crashlytics sharedInstance] recordCustomExceptionName:@"HandledException" reason:message frameArray:stackFrames];
+        [[Crashlytics sharedInstance] recordCustomExceptionName:@"HandledException" reason:message frameArray:stackFrames];
+    } @catch(NSException *exception) {
+        [[Crashlytics sharedInstance] recordCustomExceptionName:@"HandledException" reason:message frameArray:@[]];
+    }    
 }
 
 - (void)logException:(CDVInvokedUrlCommand *)command {
     NSString *message = [command argumentAtIndex:0];
 
     NSDictionary *userInfo = @{
-                               NSLocalizedDescriptionKey: NSLocalizedString(@"Unexpected excerption", nil),
+                               NSLocalizedDescriptionKey: NSLocalizedString(@"Unexpected exception", nil),
                                NSLocalizedFailureReasonErrorKey: NSLocalizedString(message, nil),
                                NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString(@"", nil)};
 
