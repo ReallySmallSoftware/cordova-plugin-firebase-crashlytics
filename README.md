@@ -127,6 +127,9 @@ You may also need to add an external to webpack.config.ls:
   },
 ```
 
+## 1.1.0
+- Update dependencies
+
 ## 1.0.0
 - Added types
 - Updated dependencies for iOS
