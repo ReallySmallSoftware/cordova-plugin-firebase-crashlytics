@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         google()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.3'
@@ -14,4 +15,6 @@ allprojects {
     }
 }
 
-apply plugin: 'com.google.firebase.crashlytics'
+ext.postBuildExtras = {
+    apply plugin: com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsPlugin
+}

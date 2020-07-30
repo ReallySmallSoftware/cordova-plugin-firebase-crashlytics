@@ -1,6 +1,6 @@
 package uk.co.reallysmall.cordova.plugin.firebase.crashlytics;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import org.apache.cordova.CordovaInterface;
 import org.json.JSONArray;
@@ -12,7 +12,7 @@ public class CrashHandler implements ActionHandler {
         cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Crashlytics.getInstance().crash();
+                throw new RuntimeException();
             }
         });
 

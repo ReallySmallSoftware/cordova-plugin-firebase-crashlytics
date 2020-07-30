@@ -2,7 +2,7 @@ package uk.co.reallysmall.cordova.plugin.firebase.crashlytics;
 
 import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import org.apache.cordova.CordovaInterface;
 import org.json.JSONArray;
@@ -16,7 +16,7 @@ public class SetStringHandler implements ActionHandler {
             final String key = args.getString(0);
             final String value = args.getString(1);
 
-            Crashlytics.setString(key, value);
+            FirebaseCrashlytics.getInstance().setCustomKey(key, value);
         } catch (JSONException e) {
             Log.e(FirebaseCrashlyticsPlugin.TAG, "Error setting string", e);
         }

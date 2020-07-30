@@ -2,7 +2,7 @@ package uk.co.reallysmall.cordova.plugin.firebase.crashlytics;
 
 import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import org.apache.cordova.CordovaInterface;
 import org.json.JSONArray;
@@ -17,7 +17,7 @@ public class LogHandler implements ActionHandler {
                 try {
                     final String msg = args.getString(0);
 
-                    Crashlytics.log(msg);
+                    FirebaseCrashlytics.getInstance().log(msg);
                 } catch (JSONException e) {
                     Log.e(FirebaseCrashlyticsPlugin.TAG, "Error logging", e);
                 }

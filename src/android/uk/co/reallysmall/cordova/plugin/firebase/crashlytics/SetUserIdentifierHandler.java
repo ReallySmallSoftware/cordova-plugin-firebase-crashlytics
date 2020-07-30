@@ -2,7 +2,7 @@ package uk.co.reallysmall.cordova.plugin.firebase.crashlytics;
 
 import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import org.apache.cordova.CordovaInterface;
 import org.json.JSONArray;
@@ -14,7 +14,7 @@ public class SetUserIdentifierHandler implements ActionHandler {
         try {
             final String identifier = args.getString(0);
 
-            Crashlytics.setUserIdentifier(identifier);
+            FirebaseCrashlytics.getInstance().setUserId(identifier);
         } catch (JSONException e) {
             Log.e(FirebaseCrashlyticsPlugin.TAG, "Error setting user identifier", e);
         }

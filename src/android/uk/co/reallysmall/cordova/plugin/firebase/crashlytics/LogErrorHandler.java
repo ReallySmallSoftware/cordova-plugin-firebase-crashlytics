@@ -2,7 +2,7 @@ package uk.co.reallysmall.cordova.plugin.firebase.crashlytics;
 
 import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import org.apache.cordova.CordovaInterface;
 import org.json.JSONArray;
@@ -29,7 +29,7 @@ public class LogErrorHandler implements ActionHandler {
                 }
 
                 if(exception != null) {
-                    Crashlytics.logException(exception);
+                    FirebaseCrashlytics.getInstance().recordException(exception);
                 }
             }
         });

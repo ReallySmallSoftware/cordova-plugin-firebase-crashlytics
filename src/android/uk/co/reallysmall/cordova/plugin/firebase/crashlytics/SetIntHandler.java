@@ -2,7 +2,7 @@ package uk.co.reallysmall.cordova.plugin.firebase.crashlytics;
 
 import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import org.apache.cordova.CordovaInterface;
 import org.json.JSONArray;
@@ -15,7 +15,7 @@ public class SetIntHandler implements ActionHandler {
             final String key = args.getString(0);
             final Integer value = args.getInt(1);
 
-            Crashlytics.setInt(key, value);
+            FirebaseCrashlytics.getInstance().setCustomKey(key, value);
         } catch (JSONException e) {
             Log.e(FirebaseCrashlyticsPlugin.TAG, "Error setting int", e);
         }
