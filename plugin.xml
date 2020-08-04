@@ -54,6 +54,7 @@
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetIntHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/SetUserIdentifierHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
     <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/LogErrorHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
+    <source-file src="src/android/uk/co/reallysmall/cordova/plugin/firebase/crashlytics/InitialiseHandler.java" target-dir="src/uk/co/reallysmall/cordova/plugin/firebase/crashlytics"/>
   </platform>
 
   <platform name="ios">
@@ -79,8 +80,6 @@
 
     <header-file src="src/ios/FirebaseCrashlyticsPlugin.h"/>
     <source-file src="src/ios/FirebaseCrashlyticsPlugin.m"/>
-    <header-file src="src/ios/AppDelegate+FirebaseCrashlyticsPlugin.h"/>
-    <source-file src="src/ios/AppDelegate+FirebaseCrashlyticsPlugin.m"/>
   </platform>
 
 </plugin>

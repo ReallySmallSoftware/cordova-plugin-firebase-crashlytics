@@ -3,6 +3,7 @@
 #import <Cordova/CDVAvailability.h>
 
 #import <Firebase/Firebase.h>
+@import FirebaseCrashlytics;
 
 @implementation FirebaseCrashlyticsPlugin
 
@@ -12,13 +13,31 @@
     }
 }
 
+- (void)initialise:(CDVInvokedUrlCommand *)command {
+    NSNumber *hasConsent = [command argumentAtIndex:0];
+
+    [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:false];
+
+    [[FIRCrashlytics crashlytics] checkForUnsentReportsWithCompletion:^(BOOL hasUnsentReports) {
+
+    if (hasConsent && hasUnsentReports) {
+        [[FIRCrashlytics crashlytics] sendUnsentReports];
+    } else {
+        [[FIRCrashlytics crashlytics] deleteUnsentReports];
+    }
+
+    if ([[FIRCrashlytics crashlytics] didCrashDuringPreviousExecution]) {
+    // ...notify the user.
+    }
+}
+
 - (void)crash:(CDVInvokedUrlCommand *)command {
-    [[Crashlytics sharedInstance] crash];
+    assert(NO);
 }
 
 - (void)logPriority:(CDVInvokedUrlCommand *)command {
     NSString *message = [command argumentAtIndex:2];
-    CLSLog(@"%@", message);
+    [[FIRCrashlytics crashlytics] logWithFormat:@"%@", message];
 }
 
 - (void)logException:(CDVInvokedUrlCommand *)command {
@@ -30,54 +49,54 @@
                                NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString(@"", nil)};
 
     NSError *error = [NSError errorWithDomain:@"uk.co.trssc" code:-1 userInfo:userInfo];
-    [CrashlyticsKit recordError:error];
-    [[Crashlytics sharedInstance] recordCustomExceptionName:@"HandledException" reason:message frameArray:@[]];
+    [[FIRCrashlytics crashlytics] recordError:error];
+
 }
 
 - (void)log:(CDVInvokedUrlCommand *)command {
     NSString *message = [command argumentAtIndex:0];
-    CLSLog(@"%@", message);
+    [[FIRCrashlytics crashlytics] logWithFormat:@"%@", message];
 }
 
 - (void)setString:(CDVInvokedUrlCommand *)command {
     NSString *key = [command argumentAtIndex:0];
     NSString *value = [command argumentAtIndex:1];
 
-    [CrashlyticsKit setObjectValue:value forKey:key];
+    [[FIRCrashlytics crashlytics] setCustomValue:value forKey:key];
 }
 
 - (void)setInt:(CDVInvokedUrlCommand *)command {
     NSString *key = [command argumentAtIndex:0];
     NSNumber *value = [command argumentAtIndex:1];
 
-    [CrashlyticsKit setIntValue:[value integerValue] forKey:key];
+    [[FIRCrashlytics crashlytics] setCustomValue:value forKey:key];
 }
 
 - (void)setBool:(CDVInvokedUrlCommand *)command {
     NSString *key = [command argumentAtIndex:0];
     NSNumber *value = [command argumentAtIndex:1];
 
-    [CrashlyticsKit setBoolValue:[value boolValue] forKey:key];
+    [[FIRCrashlytics crashlytics] setCustomValue:value forKey:key];
 }
 
 - (void)setDouble:(CDVInvokedUrlCommand *)command {
     NSString *key = [command argumentAtIndex:0];
     NSNumber *value = [command argumentAtIndex:1];
 
-    [CrashlyticsKit setFloatValue:[value doubleValue] forKey:key];
+    [[FIRCrashlytics crashlytics] setCustomValue:value forKey:key];
 }
 
 - (void)setFloat:(CDVInvokedUrlCommand *)command {
     NSString *key = [command argumentAtIndex:0];
     NSNumber *value = [command argumentAtIndex:1];
 
-    [CrashlyticsKit setFloatValue:[value floatValue] forKey:key];
+    [[FIRCrashlytics crashlytics] setCustomValue:value forKey:key];
 }
 
 - (void)setUserIdentifier:(CDVInvokedUrlCommand *)command {
     NSString *identifier = [command argumentAtIndex:0];
     
-    [CrashlyticsKit setUserIdentifier:identifier];
+    [[FIRCrashlytics crashlytics] setUserID:identifier];
 }
 
 @end

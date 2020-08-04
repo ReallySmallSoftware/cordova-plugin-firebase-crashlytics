@@ -5,6 +5,13 @@ function Crashlytics() {
 }
 
 Crashlytics.prototype = {
+  initialise: function(hasConsent) {
+    if (hasConsent) {
+      console.log("Sending previous crash reports");
+    }
+
+    return Promise.resolve(false);
+  },
   crash: function() {
     alert("Crash! Bang!");
   },

@@ -14,6 +14,7 @@ declare namespace FirebaseCrashlytics {
         setInt(key: string, value: number): void;
         setUserIdentifier(identifier: string): void;
         logError(message: string, stackTrace: StackTraceLine[]): void;
+        initialise(hasConsent: boolean): Promise<boolean>;
     }
 
     export interface StackTraceLine {

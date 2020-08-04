@@ -84,6 +84,11 @@ Example usage
 crashlytics.logPriority(FirebaseCrashlytics.LOG.WARN, 'dashboard', 'This should not happened')
 ```
 
+### initialise(hasConsent):Promise<boolean>
+Initialise Crashlytics and send any logs files if the user has given consent, otherwise delete them.
+
+Returns a true if there was a previous crash.
+
 ### log(message)
 Log a message. Will only be logged in the event of a crash.
 
@@ -129,6 +134,8 @@ You may also need to add an external to webpack.config.ls:
 
 ## 1.1.0
 - Update dependencies
+- Refactor Android and iOS code
+- Add initialise method to give consent for uploading logs
 
 ## 1.0.0
 - Added types

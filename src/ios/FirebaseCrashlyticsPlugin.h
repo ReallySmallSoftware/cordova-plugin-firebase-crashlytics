@@ -1,5 +1,4 @@
 #import <Cordova/CDVPlugin.h>
-#import <Crashlytics/Crashlytics.h>
 
 @interface FirebaseCrashlyticsPlugin : CDVPlugin <UIAlertViewDelegate>
 
