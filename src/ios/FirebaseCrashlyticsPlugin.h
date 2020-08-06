@@ -12,5 +12,6 @@
 - (void)setDouble:(CDVInvokedUrlCommand *)command;
 - (void)setFloat:(CDVInvokedUrlCommand *)command;
 - (void)setUserIdentifier:(CDVInvokedUrlCommand *)command;
+- (void)initialise:(CDVInvokedUrlCommand *)command;
 
 @end

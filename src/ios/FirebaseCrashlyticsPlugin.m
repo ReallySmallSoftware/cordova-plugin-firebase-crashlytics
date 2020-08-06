@@ -22,11 +22,12 @@
 
     [[FIRCrashlytics crashlytics] checkForUnsentReportsWithCompletion:^(BOOL hasUnsentReports) {
 
-    if (hasConsent && hasUnsentReports) {
-        [[FIRCrashlytics crashlytics] sendUnsentReports];
-    } else {
-        [[FIRCrashlytics crashlytics] deleteUnsentReports];
-    }
+        if (hasConsent && hasUnsentReports) {
+            [[FIRCrashlytics crashlytics] sendUnsentReports];
+        } else {
+            [[FIRCrashlytics crashlytics] deleteUnsentReports];
+        }
+    }];
 
     if ([[FIRCrashlytics crashlytics] didCrashDuringPreviousExecution]) {
         result = YES;
@@ -106,3 +107,4 @@
 }
 
 @end
+
