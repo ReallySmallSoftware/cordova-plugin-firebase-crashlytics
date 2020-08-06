@@ -16,7 +16,7 @@
 - (void)initialise:(CDVInvokedUrlCommand *)command {
     NSNumber *hasConsent = [command argumentAtIndex:0];
 
-    NSNumber *result = 0;
+    NSNumber *result = [NSNumber numberWithInt:0];
 
     [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:false];
 
@@ -30,7 +30,7 @@
     }];
 
     if ([[FIRCrashlytics crashlytics] didCrashDuringPreviousExecution]) {
-        result = 1;
+        result = [NSNumber numberWithInt:1];
     }
 
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:result];
