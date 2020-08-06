@@ -16,6 +16,8 @@
 - (void)initialise:(CDVInvokedUrlCommand *)command {
     NSNumber *hasConsent = [command argumentAtIndex:0];
 
+    NSNumber *result = NO;
+
     [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:false];
 
     [[FIRCrashlytics crashlytics] checkForUnsentReportsWithCompletion:^(BOOL hasUnsentReports) {
@@ -27,8 +29,12 @@
     }
 
     if ([[FIRCrashlytics crashlytics] didCrashDuringPreviousExecution]) {
-    // ...notify the user.
+        result = YES;
     }
+
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:result];
+
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void)crash:(CDVInvokedUrlCommand *)command {

@@ -43,7 +43,7 @@ public class FirebaseCrashlyticsPlugin extends CordovaPlugin {
         Log.d(TAG, action);
 
         if (handlers.containsKey(action)) {
-            return handlers.get(action).handle(args, this.cordova);
+            return handlers.get(action).handle(args, this.cordova, callbackContext);
         }
 
         return false;
