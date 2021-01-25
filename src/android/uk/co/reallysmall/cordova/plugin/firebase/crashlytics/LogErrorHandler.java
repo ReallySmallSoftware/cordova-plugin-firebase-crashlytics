@@ -57,7 +57,7 @@ public class LogErrorHandler implements ActionHandler {
             for(int i = 0; i < stackTraceLines.length; i++) {
                 String filename = stackTraceLines[i].fileName;
                 if(stackTraceLines[i].columnNumber > 0) {
-                    filename = filename + ":" + stackTraceLines[i].columnNumber;
+                    filename = filename + ":" + stackTraceLines[i].lineNumber + ":" + stackTraceLines[i].columnNumber;
                 }
 
                 stackTrace[i] = new StackTraceElement(
