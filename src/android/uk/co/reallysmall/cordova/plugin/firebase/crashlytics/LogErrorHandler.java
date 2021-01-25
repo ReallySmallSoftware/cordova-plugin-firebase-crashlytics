@@ -55,10 +55,15 @@ public class LogErrorHandler implements ActionHandler {
             super(message);
             StackTraceElement[] stackTrace = new StackTraceElement[stackTraceLines.length];
             for(int i = 0; i < stackTraceLines.length; i++) {
+                String filename = stackTraceLines[i].fileName;
+                if(stackTraceLines[i].columnNumber > 0) {
+                    filename = filename + ":" + stackTraceLines[i].columnNumber;
+                }
+
                 stackTrace[i] = new StackTraceElement(
                     stackTraceLines[i].className,
                     stackTraceLines[i].functionName,
-                    stackTraceLines[i].fileName,
+                    filename,
                     stackTraceLines[i].lineNumber
                 );
             }
@@ -72,6 +77,7 @@ public class LogErrorHandler implements ActionHandler {
         public String functionName;
         public String fileName;
         public int lineNumber;
+        public int columnNumber;
 
         private StackTraceLine() {
         }
@@ -83,6 +89,7 @@ public class LogErrorHandler implements ActionHandler {
             sl.functionName = json.optString("functionName", "<<undefined>>");
             sl.fileName = json.getString("fileName");
             sl.lineNumber = json.getInt("lineNumber");
+            sl.columnNumber = json.optInt("columnNumber", -1);
 
             return sl;
         }

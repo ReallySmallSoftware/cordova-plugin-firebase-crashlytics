@@ -22,6 +22,7 @@ declare namespace FirebaseCrashlytics {
         functionName: string;
         fileName: string;
         lineNumber: number;
+        columnNumber: number;
     }
 }
 
