@@ -2,7 +2,7 @@
 
 #import <Cordova/CDVAvailability.h>
 
-#import <Firebase/Firebase.h>
+#import "Firebase.h"
 @import FirebaseCrashlytics;
 
 @implementation FirebaseCrashlyticsPlugin
