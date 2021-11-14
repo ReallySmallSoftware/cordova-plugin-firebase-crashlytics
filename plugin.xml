@@ -7,10 +7,10 @@
   <keywords>cloud, crash, reporting</keywords>
 
   <engines>
-      <engine name="cordova" version=">=7.0.0" />
-      <engine name="cordova-android" version=">=8.0.0" />
-      <engine name="cordova-plugman" version=">=4.2.0" />
-      <engine name="cordova-ios" version=">=5.0.0" />
+    <engine name="cordova" version=">=7.0.0" />
+    <engine name="cordova-android" version=">=8.0.0" />
+    <engine name="cordova-plugman" version=">=4.2.0" />
+    <engine name="cordova-ios" version=">=5.0.0" />
   </engines>
 
   <hook type="after_plugin_install" src="scripts/after_plugin_add.js" />
@@ -73,7 +73,7 @@
         <source url="https://cdn.cocoapods.org/"/>
       </config>
       <pods use-frameworks="true">
-        <pod name="FirebaseCrashlytics"  />
+        <pod name="FirebaseCrashlytics" />
         <pod name="FirebaseAnalytics" />
       </pods>
     </podspec>
